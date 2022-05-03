@@ -1,0 +1,30 @@
+{
+    "login": {
+        "title": "כניסה מאובטחת",
+        "text": "This is a simple demonstration app for ngx-translate",
+        "greeting": "Hello {{name}}!",
+        "username": "שם משתמש",
+        "password": "סיסמה",
+        "submit": "כניסה",
+        "clear": "נקע",
+        "logout": "יציאה"
+    },
+    "create": {
+        "title": "צור הזמנה",
+        "text": "This is a simple demonstration app for ngx-translate",
+        "senderName": "שם המזמין",
+        "senderPnoneNumber": "טלפון המזמין",
+        "pickupAddress": "כתובת לאיסוף",
+        "cityName": "עיר",
+        "receiverName": "שם המקבל",
+        "receiverPhoneNumber": "טלפון המקבל",
+        "dropOffAddress": "הורד כתובת",
+        "fieldValidation": "שדה חובה",
+        "phonePatternValidation": "נא לספק מספר טלפון חוקי",
+        "totalPrice": "מחיר למשלוח",
+        "currency": "ש\"ח",
+        "choose": "בחר...",
+        "submit": "שלח",
+        "reset": "נקע"
+    }
+}

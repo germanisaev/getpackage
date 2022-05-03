@@ -1,0 +1,36 @@
+{
+    "login": {
+        "title": "Log In",
+        "text": "This is a simple demonstration app for ngx-translate",
+        "greeting": "Hello {{name}}!",
+        "username": "Username",
+        "password": "Password",
+        "submit": "Submit",
+        "clear": "Clear",
+        "logout": "LogOut"
+    },
+    "create": {
+        "title": "Create Order",
+        "text": "This is a simple demonstration app for ngx-translate",
+        "senderName": "Sender Name",
+        "fieldValidation": "Required field",
+        "phonePatternValidation": "Please provide valid phone number",
+        "senderPnoneNumber": "Sender Pnone Number",
+        "senderPnoneNumberValidation": "Sender Pnone Number is required",
+        "pickupAddress": "Pickup Address",
+        "pickupAddressValidation": "Pickup Address is required",
+        "cityName": "City",
+        "cityNameValidation": "City is required",
+        "receiverName": "Receiver Name",
+        "receiverNameValidation": "Receiver Name is required",
+        "receiverPhoneNumber": "Receiver Phone Number",
+        "receiverPhoneNumberValidation": "Receiver Phone Number is required",
+        "dropOffAddress": "Drop Off Address",
+        "dropOffAddressValidation": "Drop Off Address is required",
+        "totalPrice": "Total Price",
+        "currency": "ILS",
+        "choose": "Choose...",
+        "submit": "Submit",
+        "reset": "Reset"
+    }
+}

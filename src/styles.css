@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+.btn {
+    margin-right: 5px;
+}
+
+.btn.btn-primary {
+    color: #fff !important;
+}
+
+.card {
+    margin-top: 15px;
+}
+
+.rtl { direction: rtl !important; text-align: right !important; }
+.ltr { direction: ltr !important; text-align: left !important; }

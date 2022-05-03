@@ -1,0 +1,114 @@
+<div class="row justify-content-md-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ 'create.title' | translate }}</h5>
+                <div class="order-form">
+                    <form [formGroup]="formOrder" (ngSubmit)="onSubmit()" novalidate>
+                        <div class="form-group">
+                            <label for="senderName">{{ 'create.senderName' | translate }}</label>
+                            <input type="text" id="senderName" formControlName="senderName" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f['senderName'].errors }" />
+                            <div *ngIf="submitted && f['senderName'].errors" class="invalid-feedback">
+                                <div *ngIf="f['senderName'].errors['required']">{{ 'create.fieldValidation' | translate
+                                    }}</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="senderPnoneNumber">{{ 'create.senderPnoneNumber' | translate }}</label>
+                            <input type="text" id="senderPnoneNumber" formControlName="senderPnoneNumber"
+                                class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f['senderPnoneNumber'].errors }" />
+                            <div *ngIf="submitted && f['senderPnoneNumber'].errors" class="invalid-feedback">
+                                <div *ngIf="f['senderPnoneNumber'].errors['required']">{{ 'create.fieldValidation' |
+                                    translate }}</div>
+                                <div *ngIf="f['senderPnoneNumber'].errors['pattern']">{{ 'create.phonePatternValidation' |
+                                    translate }}</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pickupAddress">{{ 'create.pickupAddress' | translate }}</label>
+                            <input type="text" id="pickupAddress" formControlName="pickupAddress" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f['pickupAddress'].errors }" />
+                            <div *ngIf="submitted && f['pickupAddress'].errors" class="invalid-feedback">
+                                <div *ngIf="f['pickupAddress'].errors['required']">{{ 'create.fieldValidation' |
+                                    translate }}</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="citySender">{{ 'create.cityName' | translate }}</label>
+                            <select class="form-control" id="citySender" (ngModelChange)="changeCity($event)"
+                                formControlName="citySender">
+                                <option value="">{{ 'create.choose' | translate }}</option>
+                                <option *ngFor="let city of cities" [value]="city.price">
+                                    <div *ngIf="currentLanguage == 'he' else nextLanguage">{{city.heName}}</div>
+                                    <ng-template #nextLanguage>
+                                        {{city.enName}}
+                                    </ng-template>
+                                </option>
+                            </select>
+                            <div *ngIf="submitted && f['citySender'].errors" class="invalid-feedback">
+                                <div *ngIf="f['citySender'].errors['required']">{{ 'create.fieldValidation' | translate
+                                    }}</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="receiverName">{{ 'create.receiverName' | translate }}</label>
+                            <input type="text" id="receiverName" formControlName="receiverName" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f['receiverName'].errors }" />
+                            <div *ngIf="submitted && f['receiverName'].errors" class="invalid-feedback">
+                                <div *ngIf="f['receiverName'].errors['required']">{{ 'create.fieldValidation' |
+                                    translate }}</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="receiverPhoneNumber">{{ 'create.receiverPhoneNumber' | translate }}</label>
+                            <input type="text" id="receiverPhoneNumber" formControlName="receiverPhoneNumber"
+                                class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f['receiverPhoneNumber'].errors }" />
+                            <div *ngIf="submitted && f['receiverPhoneNumber'].errors" class="invalid-feedback">
+                                <div *ngIf="f['receiverPhoneNumber'].errors['required']">{{ 'create.fieldValidation' |
+                                    translate }}</div>
+                                <div *ngIf="f['receiverPhoneNumber'].errors['pattern']">{{ 'create.phonePatternValidation' |
+                                    translate }}</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="dropOffAddress">{{ 'create.dropOffAddress' | translate }}</label>
+                            <input type="text" id="dropOffAddress" formControlName="dropOffAddress" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f['dropOffAddress'].errors }" />
+                            <div *ngIf="submitted && f['dropOffAddress'].errors" class="invalid-feedback">
+                                <div *ngIf="f['dropOffAddress'].errors['required']">{{ 'create.fieldValidation' |
+                                    translate }}</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cityReceiver">{{ 'create.cityName' | translate }}</label>
+                            <select class="form-control" id="cityReceiver" #cityReceiver formControlName="cityReceiver"
+                                (ngModelChange)="changeCityReceiver($event)">
+                                <option value="">{{ 'create.choose' | translate }}</option>
+                                <option *ngFor="let city of citiesReceiver" [value]="city.price">{{city.enName}}
+                                </option>
+                            </select>
+                            <div *ngIf="submitted && f['cityReceiver'].errors" class="invalid-feedback">
+                                <div *ngIf="f['cityReceiver'].errors['required']">{{ 'create.fieldValidation' |
+                                    translate }}</div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4">
+                            <label>{{ 'create.totalPrice' | translate }}</label>
+                            <div id="totalPrice">{{totalPrice | number:'2.1-2'}} {{ 'create.currency' | translate }}
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <button type="submit" class="btn btn-primary">{{ 'create.submit' | translate }}</button>
+                            <button type="button" (click)="onReset()" class="btn btn-warning float-right">
+                                {{ 'create.reset' | translate }}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
